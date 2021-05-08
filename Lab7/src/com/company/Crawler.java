@@ -65,7 +65,7 @@ public class Crawler {
             //из списка ожидающих пар берем URL и добавляем его в обрабатываемые, запоминаем глубину поиска
             URLDepthPair depthPair = pendingURLs.pop();
             processedURLs.add(depthPair);
-            int currentDepth = depthPair.getDepth();
+            int Depth = depthPair.getDepth();
 
             //получаем все ссылки на сайте и записываем в новый список пар
             LinkedList<String> linksList = new LinkedList<String>();
@@ -73,7 +73,7 @@ public class Crawler {
 
             // Если мы не достигли максимальной глубины добавляем ссылки с сайта, которых еще нет в списке ожидания
             // и списке просмотренных
-            if (currentDepth < depth) {
+            if (Depth < depth) {
                 //проходим по всем ссылкам
                 for (int i = 0; i < linksList.size(); i++) {
                     String newURL = linksList.get(i);
@@ -84,7 +84,7 @@ public class Crawler {
                     //если ссылка встречена впервые создаем новую пару с глубиной на 1 больше чем текущая
                     // и добавляем ее в список ожидающих пар и список просмотренных пар
                     else {
-                        URLDepthPair newDepthPair = new URLDepthPair(newURL, currentDepth + 1);
+                        URLDepthPair newDepthPair = new URLDepthPair(newURL, Depth + 1);
                         pendingURLs.add(newDepthPair);
                         seenURLs.add(newURL);
                     }
@@ -92,9 +92,9 @@ public class Crawler {
             }
         }
         //выводим все пары
-        Iterator<URLDepthPair> iter = processedURLs.iterator();
-        while (iter.hasNext()) {
-            System.out.println(iter.next());
+        Iterator<URLDepthPair> iterator = processedURLs.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
         }
     }
     //Метод, который принимает пару и возвращает список строк. Создает соединение
@@ -183,8 +183,8 @@ public class Crawler {
             if (line == null)
                 break;
             //переменные для начального и коннечного индексов, а также текущего индекса
-            int beginIndex = 0;
-            int endIndex = 0;
+            int beginIndex ;
+            int endIndex ;
             int index = 0;
             while (true) {
                 //строковая константа для идентификации ссылки
