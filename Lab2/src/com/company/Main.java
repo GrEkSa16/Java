@@ -10,7 +10,7 @@ public class Main {
         Point3d C = new Point3d();
         int t = 1;
         while(t != 0) {
-            System.out.println("Для рассчета площади треугольника введите координаты 3 точек.");
+            System.out.println("Введите координаты 3 точек.");
             System.out.println("Координаты точки A:");
             A.setX(in.nextDouble());
             A.setY(in.nextDouble());
