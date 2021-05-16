@@ -38,7 +38,7 @@ public final class Student {
     //метод реализующий пополнение энергии
     public void riseEnergy(int val) { energy += val; }
     //метод возвращающий имя игрока
-    public String getName() { return name; }
+    public String Name() { return name; }
     public int getNerves() { return nerves; }
     public int getEnergy() { return energy; }
 

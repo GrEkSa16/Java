@@ -20,7 +20,7 @@ public class Game {
         System.out.println("Введите имя вашего игрока: ");
         str = in.next();
         student = new Student(str);
-        System.out.println("Загрузка... Проверьте холодильник на наличие майонеза...");
+        System.out.println("Загрузка...");
         Thread.sleep(1000);
         System.out.println("АХТУНГ!");
         Thread.sleep(300);
@@ -32,27 +32,27 @@ public class Game {
         Thread.sleep(2000);
         System.out.println("В очередной день вашей бесконечной прокрастинации вы замечаете сообщение от старосты");
         Thread.sleep(2000);
-        System.out.println("Оно гласит о том, что с сегодня последний день для закрытия своих долгов, и те, кто их не закроет - будет не допущен до сдачи экзаменов");
+        System.out.println("В нем говорится о том, что с сегодня последний день для закрытия своих долгов, и те, кто их не закроет - будет отчислен");
         Thread.sleep(2000);
-        System.out.println("Вы спешно вылетаете из общаге и спешите в вуз. Возле входа вы сталкиваетесь со своим хорошим другом, по иронии таким же лентяем.");
+        System.out.println("Вы спешно вылетаете из общаги и спешите в вуз. Возле входа вы сталкиваетесь со своим хорошим другом, по иронии таким же лентяем как и вы.");
         Thread.sleep(2000);
-        System.out.println("Женя: О!"+student.getName()+" и ты тут. Тоже все в последний день решил сдавать?");
+        System.out.println("Женя: О!"+student.Name()+" и ты тут. Тоже все в последний день решил сдавать?");
         Thread.sleep(500);
-        System.out.println(student.getName()+": Ну ты же меня знаешь, не изменяю традиции. А ты чего? Тоже решил?");
+        System.out.println(student.Name()+": Ну ты же меня знаешь, не изменяю традиции. А ты чего? Тоже решил?");
         Thread.sleep(500);
         System.out.println("Женя: Не, я свое уже оттанцевал");
         Thread.sleep(500);
-        System.out.println(student.getName()+": Шустро ты, и как?");
+        System.out.println(student.Name()+": Шустро ты, и как?");
         Thread.sleep(500);
-        System.out.println("Женя: Да не без божьей помощи, кстати о ней, вид у тебя так себе, ты вообще спал? На, держи.");
+        System.out.println("Женя: Да не без божьей помощи, кстати о ней, у меня тут тетрадь с конспектами завалялась. Старшие поделились. Держи, может поможет");
+        Thread.sleep(500);
+        System.out.println("Женя: Вид у тебя так себе, ты вообще спал? На, держи.");
         System.out.println("Женя *протянул банку с энергетиком*");
-        Thread.sleep(500);
-        System.out.println("Женя: Ах да, у меня тут тетрадь с конспектами завалялась. Старшие поделились. Держи, может поможет");
         Thread.sleep(1500);
         student.riseEnergy(3);
         System.out.println("Вы выпиваете банку залпом. Ваша энергия увеличена на 3, и теперь равна: " + student.getEnergy());
         Thread.sleep(1500);
-        System.out.println(student.getName() + ": Спасибо, надеюсь поможет. Ну, я побежал. До встречи!");
+        System.out.println(student.Name() + ": Спасибо, надеюсь поможет. Ну, я побежал. До встречи!");
         Thread.sleep(2000);
         System.out.println("Вы идете по университету и лениво вчитываетесь в свой *список долгов* :");
         //пока игрок не закрылся или не проиграл
@@ -62,7 +62,7 @@ public class Game {
             if (ProfDifficulty==1) {
                 System.out.println("Первым в вашем списке Зачет по истории.");
                 Thread.sleep(500);
-                System.out.println("К сожалению вы не появлялись на парах с начала семестра и даже не знаете как зовут преподователя. Пробежавшись глазами в конспектах ");
+                System.out.println("К сожалению вы не появлялись на парах с начала семестра и даже не знаете как зовут преподавателя. Пробежавшись глазами в конспектах... ");
                 Thread.sleep(500);
                 System.out.println("Вы отправляетесь в аудиторию... ");
                 Thread.sleep(500);
@@ -71,11 +71,11 @@ public class Game {
             if (ProfDifficulty==2) {
                 System.out.println("Второй в вашем списке Зачет по социологии.");
                 Thread.sleep(500);
-                System.out.println("Поговаривают, что он не очень жалует прогульщиков и лентяев. Хотя кто их любит?");
+                System.out.println("Поговаривают, что он не очень жалует прогульщиков и лентяев. Хотя, кто их вообще любит?");
                 Thread.sleep(500);
             }
             if (ProfDifficulty==3) {
-                System.out.println("Зачет по философии. Преподватель - гроза всех должников. Лишь единицы выходили из его кабинета живым, и те выжаты как лимон.");
+                System.out.println("Зачет по философии. Преподаватель - гроза всех должников. Лишь единицы выходили из его кабинета живым, и те выжаты как лимон.");
                 Thread.sleep(500);
                 System.out.println("Вы делаете глубокий вдох и заходите в кабинет");
             }
@@ -101,7 +101,7 @@ public class Game {
                         Professor.takeAnswer(student.tryToPass(Dice));
                         System.out.println("Вы ответили на " + student.tryToPass(Dice) + " вопроса/задачи...");
                         Thread.sleep(1500);
-                        System.out.println("У преподователя осталось " + Professor.getQuestions() + " дополнительных вопросов и " + Professor.getTasks()+" задач ");
+                        System.out.println("У преподавателя осталось " + Professor.getQuestions() + " дополнительных вопросов и " + Professor.getTasks()+" задач ");
                         Thread.sleep(1500);
                         //если игрок не ответил на вопросы, ход переходит противнику
                         if (student.tryToPass(Dice) == 0) turn = 1;
@@ -136,17 +136,17 @@ public class Game {
                 //если очков на "атаку" не хватило, то противник увеличивает "защиту"
                 if (Professor.turn(Dice) == 0){
                     if(Dice>0){
-                    System.out.println("Преподователь пополоняет список дополнительных вопросов на " + Dice);
+                    System.out.println("Преподаватель пополоняет список дополнительных вопросов на " + Dice);
                     }
                     else {
-                        System.out.println("Преподователь не придумал дополнительных вопросов");
+                        System.out.println("Преподаватель не придумал дополнительных вопросов");
                     }
                     Thread.sleep(1500);
-                    System.out.println("У преподователя " + Professor.getQuestions() + " дополнительных вопросов и " + Professor.getTasks()+" задач");
+                    System.out.println("У преподавателя " + Professor.getQuestions() + " дополнительных вопросов и " + Professor.getTasks()+" задач");
                 }
                 //при достаточном количестве очков, враг атакует
                 else {
-                    System.out.println(Professor.Name() + " Преподователь начинает тебя валить и задает " + Professor.turn(Dice)+" вопроса");
+                    System.out.println(Professor.Name() + " Преподаватель начинает тебя валить и задает " + Professor.turn(Dice)+" вопроса");
                     student.getStressed(Professor.turn(Dice));
                     Thread.sleep(1500);
                     System.out.println("Ваша энергия: " + student.getEnergy() + ", осталось нервных клеток: " + student.getNerves());
@@ -155,7 +155,7 @@ public class Game {
                 //если игрок жив, то ход переходит к нему вне зависимости от хода противника
                 if (student.getNerves() > 0) {
                     turn = 0;
-                    System.out.println("Ход переходит к " + student.getName() + "...");
+                    System.out.println("Ход переходит к " + student.Name() + "...");
                     Thread.sleep(1500);
                 }
             }
@@ -183,7 +183,6 @@ public class Game {
         if (student.getNerves() < 1) {
             System.out.println("К сожалению, ты не смог сдать дисциплины и идешь на пересдачу," );
             Thread.sleep(1500);
-           // System.out.println("однако есть и плюсы, преодователя уволили за то, что он завалил платника");
             System.out.println("но может тебе повезет в следующий раз.");
             Thread.sleep(1500);
             System.out.println("Перезапустите игру и попробуйте еще раз...");
@@ -196,24 +195,20 @@ public class Game {
             Thread.sleep(2000);
             System.out.println("И не задумываться об учебе до следующей сессии...");
             Thread.sleep(2000);
-            System.out.println("На выходе из университета вы снова встречаете ЖОЖА");
+            System.out.println("На выходе из университета вы снова встречаете Женя");
             Thread.sleep(2000);
-            System.out.println("ЖОЖА: О! " + student.getName() + ", ты жив! Это уже неожиданно");
+            System.out.println("Женя: О! " + student.Name() + ", ты жив! Это уже неожиданно");
             Thread.sleep(2000);
-            System.out.println("ЖОЖА: Ну, как успехи? Узнал когда пересдача?");
+            System.out.println("Женя: Ну, как успехи? Узнал когда пересдача?");
             Thread.sleep(2000);
-            System.out.println(student.getName()+": Хах, не поверишь. Все сдал, впервые за все время обучения.");
+            System.out.println(student.Name()+": Хах, не поверишь. Все сдал, впервые за все время обучения.");
             Thread.sleep(2000);
-            System.out.println("ЖОЖА: Ого! Да это стоит отпраздновать. А тебе уже сказали где ты будешь проходить учебную практику?");
+            System.out.println("Женя: Ого! Да это стоит отпраздновать. А тебе уже сказали где ты будешь проходить учебную практику?");
             Thread.sleep(2000);
-            System.out.println(student.getName()+": ...");
+            System.out.println(student.Name()+": ...");
             Thread.sleep(2000);
-            System.out.println(student.getName()+": ...помогите...");
+            System.out.println(student.Name()+": ...помогите...");
             Thread.sleep(2000);
-            System.out.println();
-            Thread.sleep(500);
-            System.out.println();
-            Thread.sleep(500);
             System.out.println();
             Thread.sleep(3000);
             System.out.println("Курсовая работа");
