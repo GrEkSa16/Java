@@ -3,9 +3,9 @@ package com.company;
 public final class Professors {
     //поля для значений имени и статистик
     private final String name;
+    private final int difficulty;
     private int tasks;
     private int questions;
-    private final int difficulty;
 
     //конструктор для инициализации противников по сложности
     Professors(int val) {
@@ -17,9 +17,10 @@ public final class Professors {
         //устанавливаем имя врага в зависимости от переданной сложности
         name = profLvL[val-1];
         //устанавливаем значения для полей класса в зависимости от сложности
+        difficulty = val;
         tasks = 2 * val;
         questions = val;
-        difficulty = val;
+
     }
 
     //метод, реализующий получение "урона" противником
@@ -39,10 +40,10 @@ public final class Professors {
             extraQuest(val);
             return 0;
         }
-        //иначе топит
         else
             return difficulty;
     }
+
     //метод реализующий пополнение вопросов
     public void extraQuest(int val) { questions += val; }
     //метод возвращающий имя врага

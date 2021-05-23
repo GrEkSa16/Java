@@ -156,7 +156,6 @@ public class Game {
                 if (student.getNerves() > 0) {
                     turn = 0;
                     System.out.println("Ход переходит к " + student.Name() + "...");
-                    Thread.sleep(1500);
                 }
             }
             //если игрок проиграл, то выходим из цикла обнулив сложность

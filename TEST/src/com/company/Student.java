@@ -3,18 +3,9 @@ package com.company;
 public final class Student {
     //поля для значений здоровья и статистик
     private final String name;
+    private final int knowledge;
     private int nerves;
     private int energy;
-    private final int knowledge;
-
-    //конструктор для инициализации персонажа с его именем
-    Student(String name) {
-        //устанавливаем значения для полей класса
-        this.name = name;
-        nerves = 4;
-        energy = 1;
-        knowledge = 3;
-    }
 
     //метод, реализующий получение урона
     public void getStressed(int stress) {
@@ -29,10 +20,20 @@ public final class Student {
 
     //метод, реализующий "атаку" персонажа
     public int tryToPass(int value) {
-        if (value > 2) {
+        if (value >=3) {
             return knowledge;
         }
         return 0;
+    }
+
+    //конструктор для инициализации персонажа с его именем
+    Student(String name) {
+        //устанавливаем значения для полей класса
+        this.name = name;
+        nerves = 4;
+        knowledge = 3;
+        energy = 1;
+
     }
 
     //метод реализующий пополнение энергии
